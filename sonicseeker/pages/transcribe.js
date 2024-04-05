@@ -1,26 +1,8 @@
 const { createClient } = require("@deepgram/sdk");
-
-const listen = async () => {
-  const deepgramApiKey = '27b4848e6bad384101f6525ab730218563a7a275';
-  const url = 'https://static.deepgram.com/examples/Bueller-Life-moves-pretty-fast.wav';
-  const deepgram = createClient(deepgramApiKey);
-
-  const { result, error } = await deepgram.listen.prerecorded.transcribeUrl(
-    { url },
-    {
-      model: 'nova-2',
-      language: 'en',
-      smart_format: true, 
-    },
-  );
-
-  if (error) {
-    console.error(error);
-  } else {
-    console.dir(result, { depth: null });// index.js (node example)
-
-const { createClient } = require("@deepgram/sdk");
 const fs = require("fs");
+
+// Set the Deepgram API key as an environment variable
+process.env.DEEPGRAM_API_KEY = '8a4780063304b3665a6e3d321856dcbde602df99';
 
 const transcribeFile = async () => {
   // STEP 1: Create a Deepgram client using the API key
@@ -29,7 +11,7 @@ const transcribeFile = async () => {
   // STEP 2: Call the transcribeFile method with the audio payload and options
   const { result, error } = await deepgram.listen.prerecorded.transcribeFile(
     // path to the audio file
-    fs.readFileSync("spacewalk.mp3"),
+    fs.readFileSync("C:\\Users\\Nandan Upadhyaya.DESKTOP-CKL8RDH\\Documents\\Sound Recordings\\Recording (4).m4a"),
     // STEP 3: Configure Deepgram options for audio analysis
     {
       model: "nova-2",
@@ -43,7 +25,3 @@ const transcribeFile = async () => {
 };
 
 transcribeFile();
-  }
-}
-
-listen();
