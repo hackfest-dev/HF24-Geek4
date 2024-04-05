@@ -6,8 +6,8 @@ const Header = () => {
     <header className={styles.wrapper}>
       <Link href="/">
         <div className={styles.logo}>
-          {/*<img className={styles.icon} src="logo/cue.png" alt="cue" />*/}
-          <h2 className={styles.name}>SonicSeeker</h2>
+          <img className={styles.icon} src="https://previews.123rf.com/images/muslumstock/muslumstock1811/muslumstock181105514/112624796-music-player-icon-black-filled-vector-illustration-music-player-symbol-on-white-background-can-be.jpg" alt="cue" />
+          <h2 className={styles.name}>VoiceCue</h2>
         </div>
       </Link>
       <Link href="/features">
