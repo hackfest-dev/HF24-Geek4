@@ -49,4 +49,4 @@ const WaveForm = () => {
   );
 };
 
-export default WaveForm;n
+export default WaveForm;
