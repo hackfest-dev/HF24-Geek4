@@ -2,14 +2,12 @@ import Header from "../../components/Header";
 
 export default function Home() {
   return (
-    
-      
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      
-       
-        
-    <Header />
-
-    </main>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex flex-1 items-center justify-center">
+        {/* Your main content here */}
+        <h1 className="text-4xl font-bold">Welcome to the homepage</h1>
+      </main>
+    </div>
   );
 }
