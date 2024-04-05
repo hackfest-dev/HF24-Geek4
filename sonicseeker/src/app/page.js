@@ -7,7 +7,7 @@ export default function Home() {
       <Header />
       <Footer/>
       <main className="flex flex-1 items-center justify-center">
-       
+        {/* Your main content here */}
         <h1 className="text-4xl font-bold">Welcome to the homepage</h1>
       </main>
     </div>
