@@ -1,30 +1,50 @@
-"use client"
+"use client" 
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-const Header = () => {
+const Navbar = () => {
+       const [isClick,setisClick] = useState(false);
+
+       const toggleNavbar = () => {
+
+        setisClick(!isClick);
+       }
   return (
-    <nav className="bg-white shadow-lg fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-4 h-16 flex justify-between items-center">
-        <Link href="/">
-          <div className="flex-shrink-0 mr-6 cursor-pointer">
-            <img className="h-10" src="/logo/cue.png" alt="cue" />
-          </div>
-        </Link>
-        <div className="hidden md:flex items-baseline space-x-6">
-          <Link href="/features">
-            <span className="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors duration-300">
-              Features
-            </span>
-          </Link>
-          <Link href="/about">
-            <span className="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium transition-colors duration-300">
-              About
-            </span>
-          </Link>
-        </div>
-      </div>
+    <nav className='bg-black'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+             <div className='flex items-center justify-between h-16'>
+                  <div className='flex items-center'>
+                    <div className='flex-shrink-0'>
+                      <a href = "/" className='text-white'>
+                        Logo
+                      </a>
+                    </div>
+                  </div>
+                  <div className='hidden md:block'>
+                    <div className='ml-4 flex items-center space-x-4'>
+                        <a href = "/" className='text-white hover:bg-white hover:text-black rounded-lg p-2'> Home
+                        
+                        </a>
+                         <a href = "/" className='text-white hover:bg-white hover:text-black rounded-lg p-2'> Services
+                        
+                        </a>
+                         <a href = "/" className='text-white hover:bg-white hover:text-black rounded-lg p-2'> Contact
+                        
+                        </a>
+                         <a href = "/" className='text-white hover:bg-white hover:text-black rounded-lg p-2'> About
+                        
+                        </a>
+                    </div>
+                  </div>
+                  <div className='md:hidden flex items-center'>
+                    <button className='inline-flex items-center justify-center p-2 rounded-md text-white md:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ' onClick={toggleNavbar}/>
+
+                  </div>
+                   </div>
+             </div>
     </nav>
   );
 };
 
-export default Header;
+export default Navbar;

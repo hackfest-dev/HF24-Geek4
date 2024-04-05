@@ -1,0 +1,51 @@
+.wrapper {
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: auto 80px 80px;
+    background-color: #1c1c24;
+    padding: 12px 24px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: 40px auto;
+    cursor: pointer;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+    transition: fill 0.3s ease;
+}
+
+.navItem {
+    display: grid;
+    place-items: center end;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.link {
+    color: #d4d4d4;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.page {
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+}
