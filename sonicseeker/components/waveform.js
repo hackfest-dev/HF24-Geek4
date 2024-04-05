@@ -1,5 +1,8 @@
 import Wavesurfer from "wavesurfer.js";
 import { useState, useEffect, useRef } from "react";
+"use client"
+import Link from 'next/link';
+
 
 
 const WaveForm = () => {
