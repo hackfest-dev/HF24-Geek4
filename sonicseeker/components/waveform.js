@@ -1,6 +1,6 @@
 import Wavesurfer from "wavesurfer.js";
 import { useState, useEffect, useRef } from "react";
-import styles from "./WaveForm.module.css";
+
 
 const WaveForm = () => {
   const waveform = useRef(null);
