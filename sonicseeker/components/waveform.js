@@ -1,9 +1,8 @@
 import Wavesurfer from "wavesurfer.js";
 import { useState, useEffect, useRef } from "react";
-
 import styles from "./WaveForm.module.css";
 
-const WaveForm = ({ url, setAudioWaveForm }) => {
+const WaveForm = () => {
   const waveform = useRef(null);
   const [loading, setLoading] = useState(false);
 
@@ -26,11 +25,8 @@ const WaveForm = ({ url, setAudioWaveForm }) => {
         cursorColor: "tomato",
       });
 
-      if (typeof url == "string") {
-        waveform.current.load(url);
-      } else {
-        waveform.current.loadBlob(url);
-      }
+      // Set a sample audio file URL
+      waveform.current.load("https://example.com/sample-audio.mp3");
 
       waveform.current.on("ready", function () {
         setLoading(false);
@@ -39,21 +35,15 @@ const WaveForm = ({ url, setAudioWaveForm }) => {
       waveform.current.on("loading", function () {
         setLoading(true);
       });
-
-      setAudioWaveForm(waveform);
     }
-  }, [url]);
+  }, []);
 
   return (
     <>
-      <div
-        id="waveform"
-        className={styles.waveform}
-        style={{ display: `${loading ? "hidden" : "block"}` }}
-      />
+      <div id="waveform" className={styles.waveform} />
       {loading && <h2>Loading waveform...</h2>}
     </>
   );
 };
 
-export default WaveForm;
+export default WaveForm;n
