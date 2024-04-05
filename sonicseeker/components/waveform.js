@@ -1,23 +1,27 @@
+"use client" 
 import Wavesurfer from "wavesurfer.js";
 import { useState, useEffect, useRef } from "react";
-"use client"
-import Link from 'next/link';
-
-
+import styles from './WaveForm.module.css';
 
 const WaveForm = () => {
-  const waveform = useRef(null);
+  const waveformRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [audioFile, setAudioFile] = useState(null);
 
   useEffect(() => {
-    if (waveform.current) {
-      waveform.current.destroy();
-      waveform.current = null;
-    }
+    // Cleanup function
+    return () => {
+      // Ensure waveform exists before destroying it
+      if (waveformRef.current) {
+        waveformRef.current.destroy();
+      }
+    };
+  }, []);
 
-    if (!waveform.current) {
-      waveform.current = Wavesurfer.create({
-        container: "#waveform",
+  useEffect(() => {
+    if (!waveformRef.current) {
+      waveformRef.current = Wavesurfer.create({
+        container: '#waveform', // Use the CSS selector
         waveColor: "white",
         progressColor: "#0d76ff",
         barGap: 2,
@@ -28,23 +32,46 @@ const WaveForm = () => {
         cursorColor: "tomato",
       });
 
-      // Set a sample audio file URL
-      waveform.current.load("https://example.com/sample-audio.mp3");
-
-      waveform.current.on("ready", function () {
+      waveformRef.current.on("ready", function () {
         setLoading(false);
       });
 
-      waveform.current.on("loading", function () {
+      waveformRef.current.on("loading", function () {
         setLoading(true);
       });
     }
-  }, []);
+
+    // Load the audio file from the user's input
+    if (audioFile) {
+      waveformRef.current.loadBlob(audioFile);
+    }
+
+    // Cleanup function
+    return () => {
+      // Ensure waveform exists before nullifying it
+      if (waveformRef.current) {
+        waveformRef.current = null;
+      }
+    };
+  }, [audioFile]);
+
+  const handleFileSelect = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setAudioFile(file);
+    }
+  };
 
   return (
     <>
       <div id="waveform" className={styles.waveform} />
-      {loading && <h2>Loading waveform...</h2>}
+      {loading && <h2 className={styles["loading-message"]}>Loading waveform...</h2>}
+      <input
+        type="file"
+        accept="audio/*"
+        onChange={handleFileSelect}
+        style={{ display: "block", margin: "20px auto" }}
+      />
     </>
   );
 };

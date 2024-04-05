@@ -1,3 +1,49 @@
+/* Waveform container */
 .waveform {
-    margin: 40px 0;
-  }
+  margin: 40px 0;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  /* Ensure position relative for absolute positioning of progress bar */
+  background-color: #f0f0f0;
+  /* Add a background color to ensure visibility */
+  border-radius: 8px;
+  /* Add border-radius for rounded corners */
+}
+
+/* Customize the waveform bar color */
+.wavesurfer-waveform-path {
+  fill: #0d76ff;
+  /* Waveform color */
+  height: 100%;
+  /* Make the waveform fill the container height */
+}
+
+/* Customize the waveform progress color */
+.wavesurfer-progress {
+  fill: #ff6347;
+  /* Progress color */
+}
+
+/* Customize the cursor color */
+.wavesurfer-cursor {
+  fill: #00ff00;
+  /* Cursor color */
+}
+
+/* Customize the playhead color */
+.wavesurfer-playhead {
+  fill: #ff00ff;
+  /* Playhead color */
+}
+
+/* Style loading message */
+.loading-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #555;
+  /* Loading text color */
+  font-size: 16px;
+}
