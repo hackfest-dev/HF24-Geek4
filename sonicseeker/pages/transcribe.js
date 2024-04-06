@@ -11,7 +11,7 @@ const transcribeFile = async () => {
   // STEP 2: Call the transcribeFile method with the audio payload and options
   const { result, error } = await deepgram.listen.prerecorded.transcribeFile(
     // path to the audio file
-    fs.readFileSync("E:\\Downlaods\\Recording.mp3"),
+    fs.readFileSync("C:\\Users\\Ankith Hebbar\\Downloads\\barackobamafederalplaza.mp3"),
     // STEP 3: Configure Deepgram options for audio analysis
     {
       model: "nova-2",
