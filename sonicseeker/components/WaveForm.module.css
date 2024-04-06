@@ -2,19 +2,22 @@
 .waveform {
   margin: 40px 0;
   width: 100%;
-  height: 200px;
+  height: 155px;
   position: relative;
   /* Ensure position relative for absolute positioning of progress bar */
-  background-color: #f0f0f0;
+  background-color: black;
   /* Add a background color to ensure visibility */
   border-radius: 8px;
   /* Add border-radius for rounded corners */
+  aspect-ratio: 1 / 1; /* This will make the waveform square */
 }
 
 /* Customize the waveform bar color */
 .wavesurfer-waveform-path {
   fill: #0d76ff;
   /* Waveform color */
+  width: 100%;
+  /* Make the waveform fill the container width */
   height: 100%;
   /* Make the waveform fill the container height */
 }

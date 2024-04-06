@@ -27,7 +27,7 @@ const WaveForm = () => {
         barGap: 2,
         barWidth: 3,
         barRadius: 3,
-        height: 150,
+        height: 65,
         cursorWidth: 3,
         cursorColor: "tomato",
       });
@@ -76,4 +76,4 @@ const WaveForm = () => {
   );
 };
 
-export default WaveForm;n
+export default WaveForm;
