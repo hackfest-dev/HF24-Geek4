@@ -55,11 +55,28 @@ The app workflow is as simple as uploading your voice recording, selecting which
 
 1.Change the .exampleenv to .env and paste your API key there.
 
-2.Install required dependancies.
+2.Clone the repository to your PC.
 
+```bash
+git clone https://github.com/hackfest-dev/HF24-Geek4
+```
+
+3.Install required dependancies.
+
+```bash
 npm install next
-npm install @deepgram/sdk
-npm install dotenv
+```
 
-3. Run.
-4. npm run dev
+```bash
+npm install @deepgram/sdk
+```
+
+```bash
+npm install dotenv
+```
+
+4. Run.
+ ```bash
+npm run dev
+```
+
