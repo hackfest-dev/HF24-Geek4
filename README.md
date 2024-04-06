@@ -61,7 +61,7 @@ The app workflow is as simple as uploading your voice recording, selecting which
 git clone https://github.com/hackfest-dev/HF24-Geek4
 ```
 
-3.Install required dependancies.
+3.Install required dependancies. (optional)
 
 ```bash
 npm install next
