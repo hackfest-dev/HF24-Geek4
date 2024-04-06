@@ -50,3 +50,16 @@ The app workflow is as simple as uploading your voice recording, selecting which
 
 [Namecheap](https://namecheap.com) - for custom subdomain
 
+
+## How to use this?
+
+1.Change the .exampleenv to .env and paste your API key there.
+
+2.Install required dependancies.
+
+npm install next
+npm install @deepgram/sdk
+npm install dotenv
+
+3. Run.
+4. npm run dev
